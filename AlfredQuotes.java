@@ -12,6 +12,16 @@ public class AlfredQuotes {
         // YOUR CODE HERE
         return String.format("Hello, %s. Lovely to see you. How are you?", name);
     }
+
+    public String guestGreeting(String name, String dayPeriod) {
+        // NINJA BONUS
+        return String.format("Good %s, %s. Lovely to see you.", dayPeriod, name);
+    }
+
+    // public String guestGreeting() {
+    //     // SENSEI BONUS
+    //     return String.format();
+    // }
     
     public String dateAnnouncement() {
         // YOUR CODE HERE
