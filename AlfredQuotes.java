@@ -1,7 +1,10 @@
 import java.util.Date;
+import java.text.SimpleDateFormat;
+
 public class AlfredQuotes {
 
     Date date = new Date();
+    SimpleDateFormat dayPeriod = new SimpleDateFormat("H");
     
     public String basicGreeting() {
         // You do not need to code here, this is an example method
@@ -18,10 +21,25 @@ public class AlfredQuotes {
         return String.format("Good %s, %s. Lovely to see you.", dayPeriod, name);
     }
 
-    // public String guestGreeting() {
-    //     // SENSEI BONUS
-    //     return String.format();
-    // }
+    public String guestGreeting() {
+        // SENSEI BONUS
+        String hourOfDayStr = dayPeriod.format(new Date());
+        int hourOfDayInt = Integer.parseInt(hourOfDayStr);
+
+        String periodOfDay = "";
+
+        if(hourOfDayInt >= 4 && hourOfDayInt <= 11){
+            periodOfDay = "morning";
+        } else if (hourOfDayInt >= 12 && hourOfDayInt <= 17){
+            periodOfDay = "afternoon";
+        } else if (hourOfDayInt >= 18){
+            periodOfDay = "evening";
+        } else if (hourOfDayInt <= 3){
+            periodOfDay = "midnight";
+        }
+        
+        return String.format("Good %s, lovely to see you", periodOfDay);
+    }
     
     public String dateAnnouncement() {
         // YOUR CODE HERE
